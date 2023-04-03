@@ -21,14 +21,18 @@ import android.content.res.Resources
 import android.os.Build
 import android.text.Html
 import android.text.Spanned
+import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
 import com.example.android.trackmysleepquality.database.SleepNight
 import java.text.SimpleDateFormat
+import java.util.concurrent.TimeUnit
+
 //import java.util.concurrent.TimeUnit
 //import java.util.*
 
 
-//private val ONE_MINUTE_MILLIS = TimeUnit.MILLISECONDS.convert(1, TimeUnit.MINUTES)
-//private val ONE_HOUR_MILLIS = TimeUnit.MILLISECONDS.convert(1, TimeUnit.HOURS)
+private val ONE_MINUTE_MILLIS = TimeUnit.MILLISECONDS.convert(1, TimeUnit.MINUTES)
+private val ONE_HOUR_MILLIS = TimeUnit.MILLISECONDS.convert(1, TimeUnit.HOURS)
 
 //fun convertDurationToFormatted(startTimeMilli: Long, endTimeMilli: Long, res: Resources): String {
 //    val durationMilli = endTimeMilli - startTimeMilli
@@ -132,5 +136,7 @@ fun formatNights(nights: List<SleepNight>, resources: Resources): Spanned {
         @Suppress("DEPRECATION")
         return Html.fromHtml(sb.toString())
     }
+
 }
+class TextItemViewHolder(val textView: TextView): RecyclerView.ViewHolder(textView)
 
