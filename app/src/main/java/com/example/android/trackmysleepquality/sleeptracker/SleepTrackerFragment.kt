@@ -70,7 +70,7 @@ class SleepTrackerFragment : Fragment() {
         // To use the View Model with data binding, you have to explicitly
         sleepTrackerViewModel.nights.observe(viewLifecycleOwner, Observer {
             it?.let {
-                adapter.bind = it
+                adapter.data = it
             }
         })
         // give the binding object a reference to it.
